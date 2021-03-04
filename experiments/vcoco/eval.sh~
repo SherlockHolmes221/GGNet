@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -x
+cd src
+
+python /data/xubing/Human-Object_Interactions/code/PPDMMy/src/lib/eval/vcoco_eval.py \
+--exp hce \
+--start_epoch  90 \
+--end_epoch 90
