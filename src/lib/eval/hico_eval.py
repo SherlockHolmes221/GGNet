@@ -239,8 +239,3 @@ class hico():
             rec[3]+=1
         return prediction
 
-
-# hoi_eval = hico("/home/xian/Documents/code/Test/Dataset/hico_det/annotations/test_hico.json",
-#                 "/home/xian/Documents/code/Test/exp/hoidet/hico_ppdm/model_0_gt1")
-# map = hoi_eval.evalution(json.load(open("/home/xian/Documents/code/Test/exp/hoidet/hico_ppdm/predictions_model_0_gt1.json", "r")))
-# print(map)

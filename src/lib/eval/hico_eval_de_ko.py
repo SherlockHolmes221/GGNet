@@ -1,8 +1,9 @@
+import argparse
 import os
 import numpy as np
 import sys
 
-sys.path.insert(0, "/home/xian/Documents/code/Test/src/lib")
+sys.path.insert(0, "/home/xian/Documents/code/GGNet/src/lib")
 from utils.bbox import compute_iou
 import json
 import utils.io  as io
@@ -61,7 +62,7 @@ def compute_pr(y_true, y_score, npos):
 def load_gt_dets():
     # Load anno_list
     print('Loading anno_list.json ...')
-    anno_list_json = '/home/xian/Documents/code/Test/Dataset/hico_det/annotations/anno_list.json'
+    anno_list_json = '/home/xian/Documents/code/GGNet/Dataset/hico_det/annotations/anno_list.json'
     anno_list = json.load(open(anno_list_json, "r"))
 
     gt_dets = {}
@@ -93,13 +94,13 @@ class hico_eval():
             os.makedirs(self.out_dir)
         self.annotations = load_gt_dets()
         print(len(self.annotations))
-        self.hoi_list = json.load(open('//home/xian/Documents/code/Test/Dataset/hico_det/annotations/hoi_list_new.json', 'r'))
+        self.hoi_list = json.load(open('//home/xian/Documents/code/GGNet/Dataset/hico_det/annotations/hoi_list_new.json', 'r'))
         self.file_name_to_obj_cat = json.load(
-            open('/home/xian/Documents/code/Test/Dataset/hico_det/annotations/file_name_to_obj_cat.json', "r"))
+            open('/home/xian/Documents/code/GGNet/Dataset/hico_det/annotations/file_name_to_obj_cat.json', "r"))
 
         self.global_ids = self.annotations.keys()
         print(len(self.global_ids))
-        self.hoi_id_to_num = json.load(open('/home/xian/Documents/code/Test/Dataset/hico_det/annotations/hoi_id_to_num.json', "r"))
+        self.hoi_id_to_num = json.load(open('/home/xian/Documents/code/GGNet/Dataset/hico_det/annotations/hoi_id_to_num.json', "r"))
         self.rare_id_json = [key for key, item in self.hoi_id_to_num.items() if item['rare']]
         print(len(self.rare_id_json))
         self.pred_anno = {}
@@ -310,11 +311,27 @@ class hico_eval():
 
 
 if __name__ == '__main__':
-    begin = 120
-    end = 140
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--exp',
+        default="hoidet_hico_ggnet",
+        type=str)
+    parser.add_argument(
+        '--start_epoch',
+        default=100,
+        type=int)
+    parser.add_argument(
+        '--end_epoch',
+        default=120,
+        type=int)
+    args = parser.parse_args()
+    dir = args.exp
+    begin = args.start_epoch
+    end = args.end_epoch
+
     for i in range(begin, end+1):
         model_num = i
-        model_dir = "/home/xian/Documents/code/GGNet/exp/hoidet/hico_ggnet/"
+        model_dir = f"/home/xian/Documents/code/GGNet/exp/hoidet/{dir}/"
         hoi_eval = hico_eval(f"{model_dir}/", f"{model_num}")
         file = json.load(open(f"{model_dir}/predictions_model_{model_num}.json", "r"))
         hoi_eval.evaluation_default(file)

@@ -11,8 +11,8 @@ python -u  main.py hoidet --exp_id hico_ggnet \
 --soft_gaussian \
 --recover_loss_weight \
 --refine_weight 0.1 \
---batch_size 15 \
---master_batch 1 \
+--batch_size 23 \
+--master_batch 2 \
 --lr 1.5e-4 \
 --gpus 0,1,2,3,4,5,6,7 \
 --num_workers 16 \

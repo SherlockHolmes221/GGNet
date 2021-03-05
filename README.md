@@ -1,4 +1,4 @@
-Code for our CVPR 2021 paper Glance and Gaze: Inferring Action-aware Points for One-Stage Human-Object Interaction Detection
+Code for our CVPR 2021 paper **Glance and Gaze: Inferring Action-aware Points for One-Stage Human-Object Interaction Detection**
 
 ## Getting Started
 ### Installation
@@ -39,12 +39,13 @@ pytorch=0.4.1 torchvision=0.2.1
 
 ### Training and Testing
 ~~~
-sh experiments/hico/hoidet_hico_hourglass.sh
-sh experiments/vcoco/hoidet_vcoco_hourglass.sh
+sh experiments/hico/hoidet_hico_hourglass.sh 
+sh experiments/vcoco/hoidet_vcoco_hourglass.sh 
 ~~~
 ### Evalution
 ~~~
-
+python src/lib/eval/hico_eval_de_ko.py --exp hoidet_hico_ggnet 
+python src/lib/eval/vcoco_eval.py --exp hoidet_vcoco_ggnet 
 ~~~
 
 ## Results on HICO-DET and V-COCO
@@ -54,7 +55,7 @@ sh experiments/vcoco/hoidet_vcoco_hourglass.sh
 
 |Model| Full (def)| Rare (def)| None-Rare (def)|Full (ko)| Rare (ko)| None-Rare (ko)|FPS|Download|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|hourglass104|23.47|16.48	|	25.60|	27.36|	20/23|	29.48|9|[model](https://drive.google.com/drive/folders/1Dmb87WH4KG51PQtS6CfQqgxb5v04g5Gn?usp=sharing)|
+|hourglass104|23.47|16.48	|	25.60|	27.36|	20.23|	29.48|9|[model](https://drive.google.com/drive/folders/1Dmb87WH4KG51PQtS6CfQqgxb5v04g5Gn?usp=sharing)|
 
 **Our Results on V-COCO dataset**
 |Model| AProle |Download|

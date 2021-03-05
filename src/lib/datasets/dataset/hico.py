@@ -77,7 +77,7 @@ class HICO(Dataset):
 
             if self.opt.hard_negative:
                 self.obj_to_verb = np.load(
-                    "/home/xian/Documents/code/Test/Dataset/hico_det/annotations/corre_hico_1.npy").astype(
+                    "/home/xian/Documents/code/GGNet/Dataset/hico_det/annotations/corre_hico_1.npy").astype(
                     np.float32)
         else:
             self.hoi_annotations = json.load(open(os.path.join(self.root, 'annotations', 'test_hico.json'), 'r'))
