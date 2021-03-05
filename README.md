@@ -35,7 +35,7 @@ pytorch=0.4.1 torchvision=0.2.1
     |       |-- annotations
     ~~~
     The annotations is provided [here](https://drive.google.com/drive/folders/14vrkyctUqF8w3LQ347SIwLwx0FXayE7-?usp=sharing)
- 3. Download the pre-trained models trained on COCO object detection dataset provided by  [CenterNet](https://github.com/xingyizhou/CenterNet).[Hourglass104](https://drive.google.com/open?id=1-5bT5ZF8bXriJ-wAvOjJFrBLvZV2-mlV)). Put them into the `models` folder.
+ 3. Download the pre-trained models trained on COCO object detection dataset provided by  [CenterNet](https://github.com/xingyizhou/CenterNet).[Hourglass104](https://drive.google.com/open?id=1cNyDmyorOduMRsgXoUnuyUiF6tZNFxaG)). Put them into the `models` folder.
 
 ### Training and Testing
 ~~~
