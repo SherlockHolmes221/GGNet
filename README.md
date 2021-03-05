@@ -1,4 +1,4 @@
-Code for our CVPR 2021 paper GGNet
+Code for our CVPR 2021 paper Glance and Gaze: Inferring Action-aware Points for One-Stage Human-Object Interaction Detection
 
 ## Getting Started
 ### Installation
@@ -13,23 +13,29 @@ pytorch=0.4.1 torchvision=0.2.1
 
 ## Training and Test
 ### Dataset Preparation
-1. Download [HICO-Det]() datasets. Organize them in `Dataset` folder as follows:
+1. HICO-DET Organize them in `Dataset` folder as follows:
 
     ~~~
     |-- Dataset/
-    |   |-- <dataset name>/
+    |   |-- <hico-det>/
     |       |-- images
+                |-- test2015
+                |-- train2015
     |       |-- annotations
     ~~~
-2. Download the pre-processed annotations for HICO-Det from the [[websit]]() and replace the original annotations in `Dataset` folder. The pre-processed annotations including
+    The annotations is provided [here](https://drive.google.com/drive/folders/12mR03rgdAhMMMqq68PBTeH3OdgyV4YzB?usp=sharing)
+2.  V-COCO Organize them in `Dataset` folder as follows:
 
     ~~~
-    |-- anotations/
-    |   |-- trainval_hico.json
-    |   |-- test_hico.json
-    |   |-- corre_hico.npy
+    |-- Dataset/
+    |   |-- <verbcoco>/
+    |       |-- images
+                |-- val2014
+                |-- train2014
+    |       |-- annotations
     ~~~
-   Download the corresponding pre-trained models trained on COCO object detection dataset provided by  [CenterNet](https://github.com/xingyizhou/CenterNet).[Hourglass104](https://drive.google.com/open?id=1-5bT5ZF8bXriJ-wAvOjJFrBLvZV2-mlV)). Put them into the `models` folder.
+    The annotations is provided [here](https://drive.google.com/drive/folders/14vrkyctUqF8w3LQ347SIwLwx0FXayE7-?usp=sharing)
+ 3. Download the pre-trained models trained on COCO object detection dataset provided by  [CenterNet](https://github.com/xingyizhou/CenterNet).[Hourglass104](https://drive.google.com/open?id=1-5bT5ZF8bXriJ-wAvOjJFrBLvZV2-mlV)). Put them into the `models` folder.
 
 ### Training and Testing
 ~~~
@@ -48,18 +54,17 @@ sh experiments/vcoco/hoidet_vcoco_hourglass.sh
 
 |Model| Full (def)| Rare (def)| None-Rare (def)|Full (ko)| Rare (ko)| None-Rare (ko)|FPS|Download|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|dla34 |	||	|	| |	||[model]()|
-|hourglass104||	|	|	|	|	||[model]()|
+|hourglass104|23.47|16.48	|	25.60|	27.36|	20/23|	29.48|9|[model](https://drive.google.com/drive/folders/1Dmb87WH4KG51PQtS6CfQqgxb5v04g5Gn?usp=sharing)|
 
 **Our Results on V-COCO dataset**
-
+|Model| AProle |Download|
+|:---:|:---:|:---:|
+|hourglass104|54.7|[model](https://drive.google.com/drive/folders/1Dmb87WH4KG51PQtS6CfQqgxb5v04g5Gn?usp=sharing)|
 
 ## Citation
-Please consider citing this project in your publications if it helps your research. The following is a BibTeX reference. The BibTeX entry requires the url LaTeX package.
-
 ~~~
 
 ~~~
 
 ## Acknowledge
-Some of the codes are built upon [PPDM]()
+[PPDM](https://github.com/YueLiao/PPDM)
