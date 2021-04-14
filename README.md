@@ -1,4 +1,4 @@
-Code for our CVPR 2021 paper **Glance and Gaze: Inferring Action-aware Points for One-Stage Human-Object Interaction Detection**
+Code for our CVPR 2021 paper [**Glance and Gaze: Inferring Action-aware Points for One-Stage Human-Object Interaction Detection**](https://arxiv.org/pdf/2104.05269.pdf)
 
 ## Getting Started
 ### Installation
