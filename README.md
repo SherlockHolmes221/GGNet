@@ -64,11 +64,11 @@ python src/lib/eval/vcoco_eval.py --exp hoidet_vcoco_ggnet
 
 ## Citation
 ~~~
-@misc{2104.05269,
-Author = {Xubin Zhong and Xian Qu and Changxing Ding and Dacheng Tao},
-Title = {Glance and Gaze: Inferring Action-aware Points for One-Stage Human-Object Interaction Detection},
-Year = {2021},
-Eprint = {arXiv:2104.05269},
+@inproceedings{zhong2021glance,
+  title={Glance and Gaze: Inferring Action-aware Points for One-Stage Human-Object Interaction Detection},
+  author={Zhong, Xubin and Qu, Xian and Ding, Changxing and Tao, Dacheng},
+  booktitle={CVPR},
+  year={2021}
 }
 ~~~
 
